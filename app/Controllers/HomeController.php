@@ -58,6 +58,7 @@ class HomeController {
                 $articles[] = $one;
             }
         }
+
         return new View('Html/savedFiltered.html', [
             'articles' => $articles
         ]);

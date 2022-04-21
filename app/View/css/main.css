@@ -112,6 +112,7 @@ img {
     position: relative;
     display: inline-block;
     cursor: pointer;
+    padding-left: 110px;
 }
 
 /* The actual popup (appears on top) */
