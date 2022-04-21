@@ -26,21 +26,16 @@ body {
     opacity: 0;
     transition: opacity .35s ease;
     display: none;
+    border: none;
+}
+
+.bookmark1:focus {
+    outline: none;
 }
 
 .img_div:hover .bookmark1{
     opacity: 1;
     display: inline-block;
-}
-
-/* Style buttons */
-.btn {
-    border: none;
-}
-
-/* Darker background on mouse-over */
-.btn:hover {
-    fill: blue;
 }
 
 .box {
