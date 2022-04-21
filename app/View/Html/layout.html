@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="/app/View/css/main.css">
     <script type="text/javascript" src="/app/View/js/layout.js"></script>
-
+    <script type="text/javascript" src="/app/View/js/main.js"></script>
     {% endblock %}
 </head>
 <body>
@@ -29,10 +29,14 @@
         </ul>
     </div>
 
-    <div class="float: right">
+    <div class="float: right display: flex inline">
         <form method="get" action="/bookmarks" >
-            <button class="myBookmarks" type="submit">Bookmarks</button>
+            <button class="myBookmarks" type="submit">Grāmatzīmes</button>
         </form>
+
+        <div class="popup float: left" >
+            <span class="popuptext" id="myPopup">Raksts pievienots grāmatzīmēm!</span>
+        </div>
     </div>
 
 </nav>

@@ -1,14 +1,13 @@
 function saveArticle(key) {
     var article_id = $('#id'+key).val();
 
-    const articles = JSON.parse(localStorage.getItem('savedArticles'));
-    const filtered = articles.filter(article => article.id === article_id);
-    if (filtered.length >= 1) return alert('Raksts jau ir pievienots Jūsu grāmatzīmēm!')
-
     if (localStorage.getItem("savedArticles") === null) {
         var savedArticles = [];
     } else {
         var savedArticles = JSON.parse(localStorage.getItem("savedArticles"));
+        const articles = JSON.parse(localStorage.getItem('savedArticles'));
+        const filtered = articles.filter(article => article.id === article_id);
+        if (filtered.length >= 1) return alert('Raksts jau ir pievienots Jūsu grāmatzīmēm!')
     }
     var article_id = {'id' : article_id, 'channel_id': $('#channel_id'+key).val(),
         'title': $('#title'+key).val(), 'url': $('#url'+key).val(), 'picture': $('#picture'+key).val()};
@@ -19,6 +18,7 @@ function saveArticle(key) {
     console.log('s', savedArticles);
     var all = localStorage.getItem('savedArticles');
     $.post('bookmarks', {all: all});
+    myFunction()
 }
 
 function removeArticle(id) {
@@ -32,4 +32,14 @@ function removeArticle(id) {
     var all = localStorage.getItem('savedArticles');
     $.post('bookmarks', {all: all}).done( function(){ window.location.reload(true); });
     displayUniqueChannels();
+}
+
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+    setTimeout(
+        function() {
+            popup.classList.toggle("show");
+        }, 2000);
+
 }
