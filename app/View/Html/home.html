@@ -1,0 +1,40 @@
+{% extends "Html/layout.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+    <script type="text/javascript" src="/app/View/js/main.js"></script>
+</head>
+<script>
+
+</script>
+<body class="body">
+<div id="content" class="center wrapper container">
+    <div class="row justify-content-center">
+        {% for key, article in articles %}
+        <div style="padding: 10px" class="img_div">
+            <div class="bookmark-div">
+                <input id="channel_id{{ key }}" value="{{ article.channel_id }}" hidden/>
+                <input id="title{{ key }}" value="{{ article.title }}" hidden/>
+                <input id="url{{ key }}" value="{{ article.url }}" hidden/>
+                <input id="picture{{ key }}" value="{{ article.picture }}" hidden/>
+                <input id="id{{ key }}" value="{{ article.id }}" hidden/>
+
+                <button value="{{ key }}" class='bi bi-bookmark bookmark1 btn'
+                        style="color: blue; z-index: 1000; font-size: 43px" onclick="saveArticle(this.value)">
+                </button>
+            </div>
+
+            <a href="{{ article.url }}" style="text-decoration: none; color: black">
+                <img class="margin: 25px 10px image" src="{{ article.picture }}"/> <br>
+                <div class="box"><b> {{ article.title }} </b></div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

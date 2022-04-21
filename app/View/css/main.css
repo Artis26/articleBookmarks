@@ -1,0 +1,105 @@
+body {
+    padding-top: 65px;
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.img_div {
+    position: relative;
+
+}
+
+.img_div:hover .image {
+    opacity: 0.3; /* changes hover effect */
+}
+
+.bookmark1 {
+    position: absolute;
+    right: 3%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+    display: none;
+}
+
+.img_div:hover .bookmark1 {
+    opacity: 1;
+    display: inline-block;
+}
+
+/* Style buttons */
+.btn {
+    border: none;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    fill: blue;
+}
+
+.box {
+    inline-size: 350px;
+    word-break: break-word;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+
+/* nav bar css */
+.navbar{
+    padding: 20px 10px 20px 0px;
+    background-color: #28a7e9;
+    transition: all ease 0.4s;
+}
+
+.navbar-brand{
+    font-size: 22px;
+    color: white !important;
+}
+
+.navbar .navbar-nav li a{
+    font-size: 16px;
+    color: white;
+}
+
+.myBookmarks {
+    background: none;
+    color: white;
+    border: none;
+    padding:15px;
+    font: inherit;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.myBookmarks:hover {
+    color: #3a3062;
+}
+
+.myBookmarks:focus {
+    outline: none;
+}
+
+.bookmark-div {
+    display: flex;
+}
+/*popup*/
